@@ -2,7 +2,7 @@ package Validaciones;
 
 public class ValidarFormatos{ //este metodo comprueba que la entrada de datos coincida con un numero entero , es caso contrario, saltara la excepcion
 
-    private static boolean isNumeric(String cadena){ // metodo para validar si el formato introducido es un numero de tipo int
+    public static boolean isNumeric(String cadena){ // metodo para validar si el formato introducido es un numero de tipo int
         try{
             Integer.parseInt(cadena); // si podemos realizar la operacion devolvemos true 
             return true;
@@ -11,7 +11,7 @@ public class ValidarFormatos{ //este metodo comprueba que la entrada de datos co
         }
     }
 
-    private static boolean validarDni(String dni){
+    public static boolean validarDni(String dni){
         boolean esValido=false; // variable que retornaremos para saber si es valido o no el dni introducido
         int i=0; // indice para comprobar cada una de las posiciones de dni si son numeros 
         int caracterASCII=0; // almacenaremos aqui el codifo ascci de cada posicion del dni
@@ -35,7 +35,7 @@ public class ValidarFormatos{ //este metodo comprueba que la entrada de datos co
         return esValido; // retornamos true si el dni es correcto y false si el dni introducido no es valido
     }
 
-    private static boolean validarTelefono(String telefono){ // todos los telefonos constan de 9 digitos numericos, no contemplamos la opcion de empezar por 9,8,7 o 6 por poder tener algun cliente extranjero
+    public static boolean validarTelefono(String telefono){ // todos los telefonos constan de 9 digitos numericos, no contemplamos la opcion de empezar por 9,8,7 o 6 por poder tener algun cliente extranjero
         if(telefono.length()==9){ // si el telefono tiene 9 caracteres 
             try{
                 Integer.parseInt(telefono); // comprobamos que se trate de un numero entero 
@@ -49,7 +49,7 @@ public class ValidarFormatos{ //este metodo comprueba que la entrada de datos co
 
     }
 
-    private static boolean validarPrecio(String precio){ // validamos que el precio se pueda pasar a float 
+    public static boolean validarPrecio(String precio){ // validamos que el precio se pueda pasar a float 
         try{
             Float.parseFloat(precio); // si podemos realizar la operacion devolvemos true 
             return true;
@@ -58,7 +58,7 @@ public class ValidarFormatos{ //este metodo comprueba que la entrada de datos co
         }
     }
 
-    private static boolean validarMatricula(String matricula){ // para validar el campo matricula utilizaremos expresiones regulares
+    public static boolean validarMatricula(String matricula){ // para validar el campo matricula utilizaremos expresiones regulares
         if(matricula.matches("^[0-9]{4}[A-Z]{3}$")) // si la matricula tiene formato 1111-AAA
         {
             return true;
