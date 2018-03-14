@@ -62,7 +62,7 @@ public class ValidarFormatos{ //este metodo comprueba que la entrada de datos co
         if(matricula.matches("^[0-9]{4}[A-Z]{3}$")) // si la matricula tiene formato 1111-AAA
         {
             return true;
-        }else if(matricula.matches("^[A-Z]{1,2}[0-0]{4}[A-Z]{0,2}")) // si la matricula tiene formato antiguo AA-1111-AA
+        }else if(matricula.matches("^[A-Z]{1,2}[0-9]{4}[A-Z]{0,2}")) // si la matricula tiene formato antiguo AA-1111-AA
         {
             return true;
         }else{
